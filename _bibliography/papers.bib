@@ -1,115 +1,119 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+@inproceedings{zhou-etal-2020-kdconv,
+    abbr="ACL",
+    bibtex_show={true},
+    title = "{K}d{C}onv: A {C}hinese Multi-domain Dialogue Dataset Towards Multi-turn Knowledge-driven Conversation",
+    author = "Zhou, Hao  and
+      Zheng, Chujie  and
+      Huang, Kaili  and
+      Huang, Minlie  and
+      Zhu, Xiaoyan",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL)",
+    year = "2020",
+    month = "July",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.635",
+    pdf = "https://www.aclweb.org/anthology/2020.acl-main.635",
+    code = "https://github.com/thu-coai/KdConv",
+    google_scholar_id = "d1gkVwhDpl0C",
+    selected = true,
+    doi = "10.18653/v1/2020.acl-main.635",
+    pages = "7098--7108",
+    abstract = "The research of knowledge-driven conversational systems is largely limited due to the lack of dialog data which consist of multi-turn conversations on multiple topics and with knowledge annotations. In this paper, we propose a Chinese multi-domain knowledge-driven conversation dataset, KdConv, which grounds the topics in multi-turn conversations to knowledge graphs. Our corpus contains 4.5K conversations from three domains (film, music, and travel), and 86K utterances with an average turn number of 19.0. These conversations contain in-depth discussions on related topics and natural transition between multiple topics. To facilitate the following research on this corpus, we provide several benchmark models. Comparative results show that the models can be enhanced by introducing background knowledge, yet there is still a large space for leveraging knowledge to model multi-turn conversations for further research. Results also show that there are obvious performance differences between different domains, indicating that it is worth to further explore transfer learning and domain adaptation. The corpus and benchmark models are publicly available."
 }
 
-@book{einstein1956investigations,
+@article{a-zhu-etal-2020-crosswoz,
+    abbr="TACL",
+    bibtex_show={true},
+    title = "{C}ross{WOZ}: A Large-Scale {C}hinese Cross-Domain Task-Oriented Dialogue Dataset",
+    author = "Zhu, Qi  and
+      Huang, Kaili  and
+      Zhang, Zheng  and
+      Zhu, Xiaoyan  and
+      Huang, Minlie",
+    journal = "Transactions of the Association for Computational Linguistics (TACL)",
+    volume = "8",
+    year = "2020",
+    month = "June",
+    address = "Cambridge, MA",
+    publisher = "MIT Press",
+    url = "https://aclanthology.org/2020.tacl-1.19",
+    pdf = "https://aclanthology.org/2020.tacl-1.19",
+    code = "https://github.com/thu-coai/CrossWOZ",
+    google_scholar_id = "u-x6o8ySG0sC",
+    selected = true,
+    doi = "10.1162/tacl_a_00314",
+    pages = "281--295",
+    abstract = "To advance multi-domain (cross-domain) dialogue modeling as well as alleviate the shortage of Chinese task-oriented datasets, we propose CrossWOZ, the first large-scale Chinese Cross-Domain Wizard-of-Oz task-oriented dataset. It contains 6K dialogue sessions and 102K utterances for 5 domains, including hotel, restaurant, attraction, metro, and taxi. Moreover, the corpus contains rich annotation of dialogue states and dialogue acts on both user and system sides. About 60{\%} of the dialogues have cross-domain user goals that favor inter-domain dependency and encourage natural transition across domains in conversation. We also provide a user simulator and several benchmark models for pipelined task-oriented dialogue systems, which will facilitate researchers to compare and evaluate their models on this corpus. The large size and rich annotation of CrossWOZ make it suitable to investigate a variety of tasks in cross-domain dialogue modeling, such as dialogue state tracking, policy learning, user simulation, etc.",
+}
+
+@inproceedings{wang2020chinese,
+  abbr={NLPCC},
   bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+  title={A Large-Scale Chinese Short-Text Conversation Dataset},
+  author={Wang, Yida and Ke, Pei and Zheng, Yinhe and Huang, Kaili and Jiang, Yong and Zhu, Xiaoyan and Huang, Minlie},
+  booktitle={Natural Language Processing and Chinese Computing (NLPCC)},
+  year={2020},
+  month={October},
+  doi={10.1007/978-3-030-60450-9_8},
+  pdf={https://arxiv.org/abs/2008.03946},
+  code = "https://github.com/thu-coai/CDial-GPT",
+  google_scholar_id = "2osOgNQ5qMEC",
+  selected = true,
+  abstract = "The advancements of neural dialogue generation models show promising results on modeling short-text conversations. However, training such models usually needs a large-scale high-quality dialogue corpus, which is hard to access. In this paper, we present a large-scale cleaned Chinese conversation dataset LCCC, which contains a base version (6.8 million dialogues) and a large version (12.0 million dialogues). The quality of our dataset is ensured by a rigorous data cleaning pipeline, which is built based on a set of rules and a classifier that is trained on manually annotated 110K dialogue pairs. We also release pre-training dialogue models which are trained on LCCC-base and LCCC-large respectively. The cleaned dataset and the pre-training models will facilitate the research of short-text conversation modeling. All the models and datasets are available at https://github.com/thu-coai/CDial-GPT.",
+  additional_info = {. Best Student Paper Award}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
+@inproceedings{10.1007/978-3-031-88717-8_3,
+abbr="ECIR",
+bibtex_show={true},
+selected = true,
+pdf={https://arxiv.org/abs/2504.14903},
+code={https://github.com/stanford-futuredata/colbert-serve},
+author = {Huang, Kaili and Venkatesh, Thejas and Dingankar, Uma and Mallia, Antonio and Campos, Daniel and Jiao, Jian and Potts, Christopher and Zaharia, Matei and Boahen, Kwabena and Khattab, Omar and Sarup, Saarthak and Santhanam, Keshav},
+title = {ColBERT-Serve: Efficient Multi-stage Memory-Mapped Scoring},
+year = {2025},
+isbn = {978-3-031-88716-1},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+url = {https://doi.org/10.1007/978-3-031-88717-8_3},
+doi = {10.1007/978-3-031-88717-8_3},
+abstract = {We study serving retrieval models, particularly late interaction retrievers like ColBERT, to many concurrent users at once and under a small budget, in which the index may not fit in memory. We present ColBERT-serve, a serving system that applies a memory-mapping strategy to the ColBERT index, reducing RAM usage by 90\% and permitting its deployment on cheap servers, and incorporates a multi-stage architecture with hybrid scoring, reducing ColBERT's query latency and supporting many concurrent queries in parallel.},
+booktitle = {Advances in Information Retrieval: 47th European Conference on Information Retrieval, ECIR 2025, Lucca, Italy, April 6-10, 2025, Proceedings, Part IV},
+pages = {21-30},
+numpages = {10},
+keywords = {Information Retrieval, ColBERT, Efficiency},
+location = {Lucca, Italy}
+}
+
+@ARTICLE{10595468,
+  abbr={TASLP},
   bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+  author={Gunasekara, Chulaka and Kim, Seokhwan and D'Haro, Luis Fernando and Rastogi, Abhinav and Chen, Yun-Nung and Eric, Mihail and Hedayatnia, Behnam and Gopalakrishnan, Karthik and Liu, Yang and Huang, Chao-Wei and Hakkani-Tür, Dilek and Li, Jinchao and Zhu, Qi and Luo, Lingxiao and Liden, Lars and Huang, Kaili and Shayandeh, Shahin and Liang, Runze and Peng, Baolin and Zhang, Zheng and Shukla, Swadheen and Huang, Minlie and Gao, Jianfeng and Mehri, Shikib and Feng, Yulan and Gordon, Carla and Alavi, Seyed Hossein and Traum, David and Eskenazi, Maxine and Beirami, Ahmad and Cho, Eunjoon and Crook, Paul A. and De, Ankita and Geramifard, Alborz and Kottur, Satwik and Moon, Seungwhan and Poddar, Shivani and Subba, Rajen},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+  title={Overview of the Ninth Dialog System Technology Challenge: DSTC9}, 
+  year={2024},
+  month = {July},
+  volume={32},
+  number={},
+  pages={4066-4076},
+  keywords={Task analysis;Measurement;Oral communication;Accuracy;Proposals;Mathematical models;Speech processing;Artificial intelligence;computational intelligence;chatbots;computational linguistics;human-machine systems;human computer interaction;natural language processing;natural language generation;personal voice assistants},
+  doi={10.1109/TASLP.2024.3426331},
+  google_scholar_id = "9yKSN-GCB0IC",
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
-  selected={true},
-  inspirehep_id = {3255}
-}
-
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@inproceedings{li2021multi-domain,
+abbr={AAAI},
+pdf={https://www.microsoft.com/en-us/research/publication/multi-domain-task-oriented-dialog-challenge-ii-at-dstc9/},
+author = {Li, Jinchao and Zhu, Qi and Luo, Lingxiao and Liden, Lars and Huang, Kaili and Shayandeh, Shahin and Liang, Runze and Peng, Baolin and Zhang, Zheng and Shukla, Swadheen and Takanobu, Ryuichi and Huang, Minlie and Gao, Jianfeng},
+title = {Multi-domain Task-oriented Dialog Challenge II at DSTC9},
+booktitle = {AAAI-2021 Dialog System Technology Challenge 9 Workshop},
+year = {2021},
+month = {February},
+abstract = {The paper provides an overview of the “Multi-Domain Task Completion Dialog Challenge II” track at the 9th Dialog System Technology Challenge (DSTC9). Two tasks are introduced in this track. One is end-to-end multi-domain task completion, which focuses on building end-to-end task completion dialog systems. The other is cross-lingual dialog state tracking, which seeks to build a tracker for the target language using the source language resources. We describe the task settings, baselines, evaluation methods, and submission results
+for both tasks.},
+url = {https://www.microsoft.com/en-us/research/publication/multi-domain-task-oriented-dialog-challenge-ii-at-dstc9/},
 }

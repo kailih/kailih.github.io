@@ -2,7 +2,7 @@
 layout: default
 permalink: /blog/
 title: blog
-nav: true
+nav: false  # TODO when I want to publish blogs and link to external posts (1) enable (2) move posts to _posts/ (3) uncomment the external_sources in _config.yml (4) set display_tags and display_categories to enable hashtag grouping
 nav_order: 1
 pagination:
   enabled: true
