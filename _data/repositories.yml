@@ -4,7 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - stanford-futuredata/colbert-serve
+  - thu-coai/CDial-GPT
   - thu-coai/CrossWOZ
   - thu-coai/KdConv
-  - thu-coai/CDial-GPT
+  - stanford-futuredata/colbert-serve
