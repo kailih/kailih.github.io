@@ -2,11 +2,16 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Kaili's experience as a teaching assistant (TA).
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+### <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1224/">CS224N</a>: Natural Language Processing with Deep Learning
+Stanford University, Winter 2022
 
-Organize your courses by years, topics, or universities, however you like!
+#### Lecture Notes
+[Transformer Notes](/assets/pdf/transformer_notes.pdf): a step-by-step walkthrough of the Transformer model.
+
+<!-- #### Selected Mentored Projects
+[TO ADD] -->
