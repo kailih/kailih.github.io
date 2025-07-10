@@ -1,3 +1,12 @@
+
+"huang":
+  - firstname: ["Minlie"]
+    url: http://coai.cs.tsinghua.edu.cn/hml
+
+"zhu":
+- firstname: ["Xiaoyan"]
+  url: http://coai.cs.tsinghua.edu.cn/zxy
+  
 "adams":
   - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
     url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
