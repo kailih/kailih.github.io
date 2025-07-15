@@ -109,6 +109,43 @@
       "summary": "The paper provides an overview of the 'Multi-Domain Task Completion Dialog Challenge II' track at the 9th Dialog System Technology Challenge (DSTC9). Two tasks are introduced in this track: end-to-end multi-domain task completion and cross-lingual dialog state tracking."
     }
   ],
+  "projects":[
+    {
+      "name": "Stanford University",
+      "position": "Research Assistant",
+      "url": "https://www.stanford.edu/",
+      "startDate": "2023-01-01",
+      "endDate": "2023-06-30",
+      "summary": "Collaborated with Prof. Christopher Potts, Prof. Matei Zaharia, and Prof. Kwebena Boahen to explore dendritic computation for advanced knowledge systems. Developed efficient document retrieval systems utilizing innovative memory optimization techniques. Contributed to groundbreaking research at Stanford University, enhancing the understanding of computational models. Published a paper at ECIR 2025.",
+      "highlights": ["Retrieval", "Research"]
+    },
+    {
+      "name": "Tsinghua University",
+      "position": "Research Intern",
+      "url": "https://www.stanford.edu/",
+      "startDate": "2019-07-01",
+      "endDate": "2019-09-30",
+      "summary": "Collaborated with Prof. Tengyu Ma. Applied an innovative algorithmic framework, Stochastic Lower Bound Optimization (SLBO), to building a task-oriented dialogue system for the movie-ticket booking task. Built a Vanilla Policy Gradient (VPG) agent and created a chatbot environment to train the agent. Built a pipeline of taking user simulator samples and training dialogue policies on different model-based deep reinforcement learning (RL) algorithms.",
+      "highlights": ["Reinforcement learning", "Dialogue Systems"]
+    },
+    {
+      "name": "Tsinghua University",
+      "position": "Research Assistant",
+      "url": "https://www.tsinghua.edu.cn/en/",
+      "startDate": "2018-07-01",
+      "endDate": "2020-06-30",
+      "summary": "Collaborated with Prof. Minlie Huang on advanced research in dialogue systems and natural language generation. Co-authored multiple research papers published in prestigious conferences and journals such as ACL, TACL, and NLPCC. Developed innovative methodologies to enhance machine comprehension, contributing to the field's academic growth.",
+      "highlights": ["Dialogue Systems", "Machine Comprehension", "Natural Language Generation"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Conducted 30+ paper review work for top-tier conferences and journals in natural language processing (NLP) and computer vision (CV), including EMNLP'23, ICLR'24, WACV'24, COLING'24, SIGIR'24, KDD”24, CIKM'24, WACV'25, ICLR'25, COLING'25, ACL'25, Computer Speech & Language.",
+      "position": "Reviewer",
+      "highlights": "Academic Service",
+      "startDate": "2023-01-01"
+    }
+  ],
   "part-time work":[
     {
       "name": "Stanford University",
