@@ -120,12 +120,12 @@
       "highlights": ["Retrieval", "Research"]
     },
     {
-      "name": "Tsinghua University",
+      "name": "Stanford University",
       "position": "Research Intern",
       "url": "https://www.stanford.edu/",
       "startDate": "2019-07-01",
       "endDate": "2019-09-30",
-      "summary": "Collaborated with Prof. Tengyu Ma. Applied an innovative algorithmic framework, Stochastic Lower Bound Optimization (SLBO), to building a task-oriented dialogue system for the movie-ticket booking task. Built a Vanilla Policy Gradient (VPG) agent and created a chatbot environment to train the agent. Built a pipeline of taking user simulator samples and training dialogue policies on different model-based deep reinforcement learning (RL) algorithms.",
+      "summary": "As part of the Stanford UGVR program, collaborated with Prof. Tengyu Ma. Applied an innovative algorithmic framework, Stochastic Lower Bound Optimization (SLBO), to building a task-oriented dialogue system for the movie-ticket booking task. Built a Vanilla Policy Gradient (VPG) agent and created a chatbot environment to train the agent. Built a pipeline of taking user simulator samples and training dialogue policies on different model-based deep reinforcement learning (RL) algorithms.",
       "highlights": ["Reinforcement learning", "Dialogue Systems"]
     },
     {
@@ -189,14 +189,14 @@
       "title": "NLPCC Best Student Paper",
       "date": "2020",
       "awarder": "Natural Language Processing and Chinese Computing (NLPCC)",
-      "url": "",
+      "url": "http://tcci.ccf.org.cn/conference/2020/",
       "summary": "NLPCC is a leading international conference specialized in the fields of Natural Language Processing (NLP) and Chinese Computing (CC)."
     },
     {
       "title": "Stanford UGVR Scholar",
       "date": "2019",
       "awarder": "Stanford University, Tsinghua University",
-      "url": "",
+      "url": "https://engineering.stanford.edu/students-academics/global-engineering-programs/undergraduate-visiting-research-program",
       "summary": "Up to 18 students from China are admitted per year"
     },
     {
@@ -204,7 +204,7 @@
       "date": "2014",
       "awarder": "National Olympiad in Informatics",
       "url": "",
-      "summary": ""
+      "summary": "The National Olympiad in Informatics in Provinces (NOIP) is a competitive programming competition for high school students in China. It is one of the most prestigious and challenging competitions in the field of computer science."
     }
   ],
   "skills": [
