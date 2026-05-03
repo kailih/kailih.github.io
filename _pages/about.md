@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Applied Scientist @ Microsoft. MSCS @ Stanford. BE @ Tsinghua.
+subtitle: Senior MLE @ Apple. MSCS @ Stanford. BE @ Tsinghua.
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
 
 I am an enthusiastic machine learning engineer and researcher. My interests span natural language processing, large language models, information retrieval, multi-modality, question answering, dialog systems, etc.
 
-I am working at <a href='https://www.microsoft.com/en-us/'>Microsoft</a> as an Applied Scientist, where I work on natural language processing and multi-modality modeling. I graduated from <a href="https://www.stanford.edu/">Stanford University</a> with a master's degree in Computer Science. Before attending Stanford, I received my bachelor's degree from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, and then worked at <a href="https://www.bytedance.com/en/">ByteDance</a> as a Machine Learning Engineer for 1 year.
+I am working at <a href='https://www.apple.com/'>Apple</a> as a Senior Machine Learning Engineer, building scalable ML systems. Previously, I was an Applied Scientist at <a href='https://www.microsoft.com/en-us/'>Microsoft</a>, where I worked on natural language processing, multi-modality modeling, and GenAI. I graduated from <a href="https://www.stanford.edu/">Stanford University</a> with a master's degree in Computer Science. Before attending Stanford, I received my bachelor's degree from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, and then worked at <a href="https://www.bytedance.com/en/">ByteDance</a> as a Machine Learning Engineer for 1 year.
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
