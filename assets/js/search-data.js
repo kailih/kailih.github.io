@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Kaili&#39;s publications by categories in reversed chronological order.",
+          description: "Kaili&#39;s publications in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -46,6 +46,9 @@ ninja.data = [{
           },
         },{id: "news-we-are-excited-to-announce-that-our-latest-research-colbert-serve-efficient-multi-stage-memory-mapped-scoring-was-recently-accepted-and-presented-at-the-47th-european-conference-on-information-retrieval-ecir-2025-our-work-introduces-a-new-method-for-making-state-of-the-art-neural-search-more-efficient-and-scalable",
           title: 'We are excited to announce that our latest research, ColBERT-serve: Efficient Multi-Stage Memory-Mapped...',
+          description: "",
+          section: "News",},{id: "news-excited-to-share-that-i-have-joined-apple-as-a-senior-machine-learning-engineer-this-january-looking-forward-to-building-thoughtful-scalable-ml-systems-and-pushing-the-boundaries-of-what-s-possible-read-more-on-linkedin",
+          title: 'Excited to share that I have joined Apple as a Senior Machine Learning...',
           description: "",
           section: "News",},{id: "projects-engineering-effective-in-context-inputs-for-gpt-3-in-openqa",
           title: 'Engineering Effective In-Context Inputs for GPT-3 in OpenQA',
