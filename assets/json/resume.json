@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Kaili Huang",
-    "label": "Applied Scientist",
+    "label": "Senior Machine Learning Engineer",
     "image": "",
     "email": "kaili@cs.stanford.edu",
     "url": "https://kailihuang.com",
-    "summary": "An applied scientist and researcher with a strong background in machine learning and natural language processing.",
+    "summary": "A senior machine learning engineer and researcher with a strong background in machine learning, natural language processing, and GenAI, building scalable ML systems at Apple.",
     "profiles": [
       {
         "network": "LinkedIn",
@@ -38,13 +38,22 @@
   ],
   "work": [
     {
+      "name": "Apple",
+      "position": "Senior Machine Learning Engineer",
+      "url": "https://www.apple.com",
+      "startDate": "2026-01-01",
+      "endDate": "",
+      "summary": "Building scalable ML systems.",
+      "highlights": ["Machine learning", "Scalable systems"]
+    },
+    {
       "name": "Microsoft",
       "position": "Applied Scientist",
       "url": "https://www.microsoft.com",
       "startDate": "2023-08-01",
-      "endDate": "",
-      "summary": "Working in Bing Ads Team.",
-      "highlights": ["Large language models", "Multi-modality", "Visual-linguistic", "Research"]
+      "endDate": "2026-01-01",
+      "summary": "Worked in Bing Ads Team on multi-modal retrieval and LLM-powered GenAI features. Adapted CLIP, SigLIP, and Perception Encoder to 5 advertising scenarios, achieving up to 12% AUC gains; applied knowledge distillation for 28–34% AUC improvement with 6.2% defect reduction in production. Designed and deployed LLM RAG systems for Ads Copilot, achieving 15.6% Recall@10 increase and 6% answer quality gain.",
+      "highlights": ["Multi-modal retrieval", "LLM RAG", "Knowledge distillation", "GenAI", "Production deployment"]
     },
     {
       "name": "Microsoft",
