@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Kaili Huang",
-    "label": "Senior Machine Learning Engineer",
+    "label": "Senior ML Engineer | LLM Post-Training, RL & Alignment",
     "image": "",
     "email": "kaili@cs.stanford.edu",
     "url": "https://kailihuang.com",
-    "summary": "A senior machine learning engineer and researcher with a strong background in machine learning, natural language processing, and GenAI, building scalable ML systems at Apple.",
+    "summary": "Senior ML engineer focused on LLM post-training, RL alignment, and large-scale retrieval. Currently at Apple; previously at Microsoft AI and ByteDance AI Lab. MSCS @ Stanford.",
     "profiles": [
       {
         "network": "LinkedIn",
@@ -43,35 +43,35 @@
       "url": "https://www.apple.com",
       "startDate": "2026-01-01",
       "endDate": "",
-      "summary": "Building scalable ML systems.",
-      "highlights": ["Machine learning", "Scalable systems"]
+      "summary": "Working on LLM post-training and RL alignment for large-scale retrieval. Focused on reward design, policy optimization, and preference-data workflows that move beyond traditional ranking toward reasoning-driven candidate generation.",
+      "highlights": ["LLM post-training (SFT/RL)", "Reward design & RL policy optimization", "Generative retrieval", "Alignment evaluation"]
     },
     {
-      "name": "Microsoft",
+      "name": "Microsoft AI",
       "position": "Applied Scientist",
       "url": "https://www.microsoft.com",
       "startDate": "2023-08-01",
       "endDate": "2026-01-01",
-      "summary": "Worked in Bing Ads Team on multi-modal retrieval and LLM-powered GenAI features. Adapted CLIP, SigLIP, and Perception Encoder to 5 advertising scenarios, achieving up to 12% AUC gains; applied knowledge distillation for 28–34% AUC improvement with 6.2% defect reduction in production. Designed and deployed LLM RAG systems for Ads Copilot, achieving 15.6% Recall@10 increase and 6% answer quality gain.",
-      "highlights": ["Multi-modal retrieval", "LLM RAG", "Knowledge distillation", "GenAI", "Production deployment"]
+      "summary": "Worked on LLM evaluation, RAG alignment, and large-scale multi-modal retrieval. Adapted CLIP, SigLIP, and Perception Encoder to multiple text-to-image and image-to-image retrieval/reranking tasks; trained teacher models and distilled into lightweight students for production. Designed GPT-based RAG evaluation and human-in-the-loop alignment infrastructure for LLM Copilot systems.",
+      "highlights": ["LLM evaluation & RAG alignment", "Large-scale multi-modal retrieval (CLIP/SigLIP)", "Knowledge distillation", "Human-in-the-loop evaluation"]
     },
     {
-      "name": "Microsoft",
+      "name": "Microsoft AI",
       "position": "Data & Applied Scientist Intern",
       "url": "https://www.microsoft.com",
       "startDate": "2022-06-01",
       "endDate": "2022-09-01",
-      "summary": "Worked in Bing Ads Team on multi-modality model pruning. Extended Transformer models' structured pruning methods into CLIP (Contrastive Language-Image Pre-training) for the first time. Reduced the model size significantly (-40%) with a slight accuracy drop (-1%).",
-      "highlights": ["Multi-modality", "Model pruning", "Transformers", "40% model size reduction"]
+      "summary": "Worked on large-scale multi-modal Transformer compression. Extended structured pruning methods to CLIP (Contrastive Language-Image Pre-training) for the first time, reducing model size by 40% with minimal accuracy loss; built sparse PyTorch training pipelines with recovery schedules and auxiliary losses to stabilize multi-modal compression.",
+      "highlights": ["Multi-modal Transformers", "Large-scale model compression", "Structured pruning on CLIP"]
     },
     {
-      "name": "ByteDance",
+      "name": "ByteDance AI Lab (later Seed)",
       "position": "Machine Learning Engineer",
       "url": "https://www.bytedance.com",
       "startDate": "2020-07-01",
       "endDate": "2021-08-01",
-      "summary": "Worked on natural language processing (NLP) at Language and Information Technology Group (LITG), AI Lab, supervised by Dr. Hang Li. Constructed a fake news detection pipeline from scratch, and built bot-written articles detection models.",
-      "highlights": ["Natural language processing", "Fake news detection", "Bot-written articles detection", "AI Lab"]
+      "summary": "Worked on NLP and data-centric safety at AI Lab (later Seed), supervised by Dr. Hang Li. Built large-scale fake-news and harmful-content detection pipelines with finetuned BERT/NLI models, downstream human review, and 2M+ guideline-driven annotations; deployed with auto-retraining and version-controlled rollout.",
+      "highlights": ["NLP & data-centric safety", "Large-scale harmful-content detection", "BERT/NLI fine-tuning", "Guideline-driven annotation"]
     }
   ],
   "publications": [
@@ -86,7 +86,7 @@
       "name": "Overview of the Ninth Dialog System Technology Challenge: DSTC9",
       "publisher": "IEEE/ACM Transactions on Audio, Speech, and Language Processing",
       "releaseDate": "2024-07",
-      "url": "https://doi.org/10.1109/TASLP.2024.3426331",
+      "url": "https://dl.acm.org/doi/10.1109/TASLP.2024.3426331",
       "summary": "Overview paper for the Ninth Dialog System Technology Challenge (DSTC9), covering multi-domain task-oriented dialogue systems and cross-lingual dialogue state tracking."
     },
     {
@@ -116,6 +116,20 @@
       "releaseDate": "2021-02",
       "url": "https://www.microsoft.com/en-us/research/publication/multi-domain-task-oriented-dialog-challenge-ii-at-dstc9/",
       "summary": "The paper provides an overview of the 'Multi-Domain Task Completion Dialog Challenge II' track at the 9th Dialog System Technology Challenge (DSTC9). Two tasks are introduced in this track: end-to-end multi-domain task completion and cross-lingual dialog state tracking."
+    },
+    {
+      "name": "DeepThink: Aligning Language Models with Domain-Specific User Intents",
+      "publisher": "arXiv preprint arXiv:2502.05497",
+      "releaseDate": "2025-02",
+      "url": "https://arxiv.org/abs/2502.05497",
+      "summary": "We propose DeepThink, a framework for aligning large language models with domain-specific user intents through targeted instruction synthesis and preference optimization, improving instruction-following quality on specialized tasks."
+    },
+    {
+      "name": "Investigating Effect of Dialogue History in Multilingual Task-Oriented Dialogue Systems",
+      "publisher": "arXiv preprint arXiv:2112.12318",
+      "releaseDate": "2021-12",
+      "url": "https://arxiv.org/abs/2112.12318",
+      "summary": "We study how dialogue history influences multilingual task-oriented dialogue systems, analyzing cross-lingual transfer and the role of context length on end-to-end dialogue performance."
     }
   ],
   "projects":[
@@ -125,8 +139,8 @@
       "url": "https://www.stanford.edu/",
       "startDate": "2023-01-01",
       "endDate": "2023-06-30",
-      "summary": "Collaborated with Prof. Christopher Potts, Prof. Matei Zaharia, and Prof. Kwebena Boahen to explore dendritic computation for advanced knowledge systems. Developed efficient document retrieval systems utilizing innovative memory optimization techniques. Contributed to groundbreaking research at Stanford University, enhancing the understanding of computational models. Published a paper at ECIR 2025.",
-      "highlights": ["Retrieval", "Research"]
+      "summary": "Collaborated with Prof. Christopher Potts, Prof. Matei Zaharia, and Prof. Kwabena Boahen on efficient large-scale neural retrieval. Designed memory-mapped multi-stage scoring for ColBERT, reducing RAM usage by 90% while preserving retrieval quality. Published at ECIR 2025.",
+      "highlights": ["Large-scale neural retrieval (ColBERT)", "Memory-mapped multi-stage scoring", "ECIR 2025"]
     },
     {
       "name": "Stanford University",
@@ -134,8 +148,8 @@
       "url": "https://www.stanford.edu/",
       "startDate": "2019-07-01",
       "endDate": "2019-09-30",
-      "summary": "As part of the Stanford UGVR program, collaborated with Prof. Tengyu Ma. Applied an innovative algorithmic framework, Stochastic Lower Bound Optimization (SLBO), to building a task-oriented dialogue system for the movie-ticket booking task. Built a Vanilla Policy Gradient (VPG) agent and created a chatbot environment to train the agent. Built a pipeline of taking user simulator samples and training dialogue policies on different model-based deep reinforcement learning (RL) algorithms.",
-      "highlights": ["Reinforcement learning", "Dialogue Systems"]
+      "summary": "Collaborated with Prof. Tengyu Ma on model-based RL for task-oriented dialogue. Built SLBO and Vanilla Policy Gradient (VPG) agents with user-simulator training pipelines for dialogue policy optimization. Part of Stanford UGVR program.",
+      "highlights": ["Reinforcement learning (SLBO/VPG)", "Dialogue policy optimization", "Model-based RL"]
     },
     {
       "name": "Tsinghua University",
@@ -143,13 +157,13 @@
       "url": "https://www.tsinghua.edu.cn/en/",
       "startDate": "2018-07-01",
       "endDate": "2020-06-30",
-      "summary": "Collaborated with Prof. Minlie Huang on advanced research in dialogue systems and natural language generation. Co-authored multiple research papers published in prestigious conferences and journals such as ACL, TACL, and NLPCC. Developed innovative methodologies to enhance machine comprehension, contributing to the field's academic growth.",
-      "highlights": ["Dialogue Systems", "Machine Comprehension", "Natural Language Generation"]
+      "summary": "Collaborated with Prof. Minlie Huang on large-scale Chinese dialogue datasets and multi-turn knowledge-driven conversation modeling. Co-authored multiple papers at ACL, TACL, and NLPCC.",
+      "highlights": ["Large-scale dialogue datasets", "Multi-turn knowledge-driven conversation", "ACL/TACL/NLPCC publications"]
     }
   ],
   "volunteer": [
     {
-      "organization": "Conducted 30+ paper review work for top-tier conferences and journals in natural language processing (NLP) and computer vision (CV), including EMNLP'23, ICLR'24, WACV'24, COLING'24, SIGIR'24, KDD”24, CIKM'24, WACV'25, ICLR'25, COLING'25, ACL'25, Computer Speech & Language.",
+      "organization": "Conducted 45+ paper review work for top-tier conferences and journals in natural language processing (NLP) and computer vision (CV), including EMNLP'23, ICLR'24, WACV'24, COLING'24, SIGIR'24, KDD”24, CIKM'24, WACV'25, ICLR'25, COLING'25, ACL'25, Computer Speech & Language.",
       "position": "Reviewer",
       "highlights": "Academic Service",
       "startDate": "2023-01-01"
@@ -162,8 +176,8 @@
       "url": "https://www.stanford.edu",
       "startDate": "2023-01-01",
       "endDate": "2023-06-01",
-      "summary": "Worked at Stanford Brains in Silicon Lab on dendritic computation for knowledge systems, supervised by Prof. Kwabena Boahen and Prof. Matei Zaharia. Built powerful and efficient document retrieval systems with quantization techniques.",
-      "highlights": ["Dendritic computation", "Knowledge systems", "Document retrieval", "Quantization techniques"]
+      "summary": "Worked at Stanford Brains in Silicon Lab on efficient large-scale neural retrieval, supervised by Prof. Kwabena Boahen and Prof. Matei Zaharia. Built memory-efficient document retrieval systems with quantization and memory-mapping techniques.",
+      "highlights": ["Large-scale neural retrieval", "Memory-mapped serving", "Quantization"]
     },
     {
       "name": "Stanford University",
@@ -171,8 +185,8 @@
       "url": "https://www.stanford.edu",
       "startDate": "2019-07-01",
       "endDate": "2019-09-01",
-      "summary": "Worked on model-based reinforcement learning (RL) for training task-oriented dialogue systems supervised by Prof. Tengyu Ma. Part of Stanford UGVR program ($11,400 sponsorship. Up to 18 students from China are admitted per year).",
-      "highlights": ["Reinforcement learning", "Dialogue systems", "UGVR program", "$11,400 sponsorship"]
+      "summary": "Worked on model-based reinforcement learning (RL) for task-oriented dialogue policy optimization, supervised by Prof. Tengyu Ma. Part of Stanford UGVR program (up to 18 students from China admitted per year).",
+      "highlights": ["Model-based reinforcement learning", "Dialogue policy optimization", "UGVR program"]
     },
     {
       "name": "Tsinghua University",
@@ -180,8 +194,8 @@
       "url": "https://www.tsinghua.edu.cn",
       "startDate": "2018-07-01",
       "endDate": "2020-06-01",
-      "summary": "Worked on dialogue systems, machine comprehension, natural language generation supervised by Prof. Minlie Huang. Published on TACL, ACL, NLPCC, etc.",
-      "highlights": ["Dialogue systems", "Machine comprehension", "Natural language generation", "TACL", "ACL", "NLPCC"]
+      "summary": "Worked on large-scale dialogue datasets, multi-turn knowledge-driven conversation, and NLP supervised by Prof. Minlie Huang. Published at TACL, ACL, NLPCC, etc.",
+      "highlights": ["Large-scale dialogue datasets", "Multi-turn knowledge-driven conversation", "NLP", "TACL/ACL/NLPCC"]
     },
     {
       "name": "Stanford University",
@@ -206,7 +220,7 @@
       "date": "2019",
       "awarder": "Stanford University, Tsinghua University",
       "url": "https://engineering.stanford.edu/students-academics/global-engineering-programs/undergraduate-visiting-research-program",
-      "summary": "Up to 18 students from China are admitted per year"
+      "summary": "Highly selective summer research fellowship at Stanford Engineering, admitting up to 18 top undergraduates from Tsinghua, Peking, and other leading Chinese universities each year. Awardees are matched with Stanford faculty to conduct full-time research."
     },
     {
       "title": "1st Prize in National Olympiad in Informatics in Provinces",
@@ -222,13 +236,14 @@
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Machine Learning",
-        "Natural Language Processing",
-        "Information Retrieval",
-        "Deep Learning",
-        "Computer Vision",
-        "Multi-modal Models",
-        "Large Language Models"
+        "LLM Post-Training (SFT/RL)",
+        "RL Alignment & Reward Design",
+        "Large Language Models",
+        "RAG & LLM Evaluation",
+        "Multi-modal Learning (CLIP/SigLIP)",
+        "Large-scale Neural Retrieval (ColBERT)",
+        "Distributed Training (PyTorch)",
+        "Natural Language Processing"
       ]
     }
   ],
