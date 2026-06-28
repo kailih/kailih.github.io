@@ -44,10 +44,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "news-we-are-excited-to-announce-that-our-latest-research-colbert-serve-efficient-multi-stage-memory-mapped-scoring-was-recently-accepted-and-presented-at-the-47th-european-conference-on-information-retrieval-ecir-2025-our-work-introduces-a-new-method-for-making-state-of-the-art-neural-search-more-efficient-and-scalable",
-          title: 'We are excited to announce that our latest research, ColBERT-serve: Efficient Multi-Stage Memory-Mapped...',
+        },{id: "news-excited-to-share-that-our-paper-colbert-serve-efficient-multi-stage-memory-mapped-scoring-was-accepted-and-presented-at-the-47th-european-conference-on-information-retrieval-ecir-2025-the-work-introduces-a-memory-mapped-multi-stage-scoring-approach-that-makes-late-interaction-neural-retrieval-colbert-far-more-efficient-and-scalable-for-serving-llm-powered-retrieval-systems",
+          title: 'Excited to share that our paper, ColBERT-serve: Efficient Multi-Stage Memory-Mapped Scoring, was accepted...',
           description: "",
-          section: "News",},{id: "news-excited-to-share-that-i-have-joined-apple-as-a-senior-machine-learning-engineer-this-january-looking-forward-to-building-thoughtful-scalable-ml-systems-and-pushing-the-boundaries-of-what-s-possible-read-more-on-linkedin",
+          section: "News",},{id: "news-excited-to-share-that-i-have-joined-apple-as-a-senior-machine-learning-engineer-this-january-working-on-llm-post-training-rl-policy-optimization-and-alignment-evaluation-for-large-scale-retrieval-looking-forward-to-pushing-the-boundaries-of-reasoning-driven-retrieval-and-alignment-read-more-on-linkedin",
           title: 'Excited to share that I have joined Apple as a Senior Machine Learning...',
           description: "",
           section: "News",},{id: "projects-engineering-effective-in-context-inputs-for-gpt-3-in-openqa",
