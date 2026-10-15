@@ -15,6 +15,29 @@
   abstract={We introduce CoGR, a generative retrieval framework that trains LLMs to construct compact keyword representations for both queries and items. After supervised fine-tuning establishes an aligned keyword space, co-evolving reinforcement learning alternately optimizes the query- and item-side generators using a shared retrieval objective.}
 }
 
+@inproceedings{10.1007/978-3-031-88717-8_3,
+abbr="ECIR",
+bibtex_show={true},
+selected = true,
+pdf={https://arxiv.org/abs/2504.14903},
+code={https://github.com/stanford-futuredata/colbert-serve},
+author = {Huang, Kaili and Venkatesh, Thejas and Dingankar, Uma and Mallia, Antonio and Campos, Daniel and Jiao, Jian and Potts, Christopher and Zaharia, Matei and Boahen, Kwabena and Khattab, Omar and Sarup, Saarthak and Santhanam, Keshav},
+title = {ColBERT-Serve: Efficient Multi-stage Memory-Mapped Scoring},
+year = {2025},
+month = {April},
+isbn = {978-3-031-88716-1},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+url = {https://doi.org/10.1007/978-3-031-88717-8_3},
+doi = {10.1007/978-3-031-88717-8_3},
+abstract = {We study serving retrieval models, particularly late interaction retrievers like ColBERT, to many concurrent users at once and under a small budget, in which the index may not fit in memory. We present ColBERT-serve, a serving system that applies a memory-mapping strategy to the ColBERT index, reducing RAM usage by 90\% and permitting its deployment on cheap servers, and incorporates a multi-stage architecture with hybrid scoring, reducing ColBERT's query latency and supporting many concurrent queries in parallel.},
+booktitle = {Advances in Information Retrieval: 47th European Conference on Information Retrieval, ECIR 2025, Lucca, Italy, April 6-10, 2025, Proceedings, Part IV},
+pages = {21-30},
+numpages = {10},
+keywords = {Information Retrieval, ColBERT, Efficiency},
+location = {Lucca, Italy}
+}
+
 @inproceedings{zhou-etal-2020-kdconv,
     abbr="ACL",
     bibtex_show={true},
@@ -51,7 +74,6 @@
     journal = "Transactions of the Association for Computational Linguistics (TACL)",
     volume = "8",
     year = "2020",
-    month = "June",
     address = "Cambridge, MA",
     publisher = "MIT Press",
     url = "https://aclanthology.org/2020.tacl-1.19",
@@ -79,28 +101,6 @@
   selected = true,
   abstract = "The advancements of neural dialogue generation models show promising results on modeling short-text conversations. However, training such models usually needs a large-scale high-quality dialogue corpus, which is hard to access. In this paper, we present a large-scale cleaned Chinese conversation dataset LCCC, which contains a base version (6.8 million dialogues) and a large version (12.0 million dialogues). The quality of our dataset is ensured by a rigorous data cleaning pipeline, which is built based on a set of rules and a classifier that is trained on manually annotated 110K dialogue pairs. We also release pre-training dialogue models which are trained on LCCC-base and LCCC-large respectively. The cleaned dataset and the pre-training models will facilitate the research of short-text conversation modeling. All the models and datasets are available at https://github.com/thu-coai/CDial-GPT.",
   additional_info = {. Best Student Paper Award}
-}
-
-@inproceedings{10.1007/978-3-031-88717-8_3,
-abbr="ECIR",
-bibtex_show={true},
-selected = true,
-pdf={https://arxiv.org/abs/2504.14903},
-code={https://github.com/stanford-futuredata/colbert-serve},
-author = {Huang, Kaili and Venkatesh, Thejas and Dingankar, Uma and Mallia, Antonio and Campos, Daniel and Jiao, Jian and Potts, Christopher and Zaharia, Matei and Boahen, Kwabena and Khattab, Omar and Sarup, Saarthak and Santhanam, Keshav},
-title = {ColBERT-Serve: Efficient Multi-stage Memory-Mapped Scoring},
-year = {2025},
-isbn = {978-3-031-88716-1},
-publisher = {Springer-Verlag},
-address = {Berlin, Heidelberg},
-url = {https://doi.org/10.1007/978-3-031-88717-8_3},
-doi = {10.1007/978-3-031-88717-8_3},
-abstract = {We study serving retrieval models, particularly late interaction retrievers like ColBERT, to many concurrent users at once and under a small budget, in which the index may not fit in memory. We present ColBERT-serve, a serving system that applies a memory-mapping strategy to the ColBERT index, reducing RAM usage by 90\% and permitting its deployment on cheap servers, and incorporates a multi-stage architecture with hybrid scoring, reducing ColBERT's query latency and supporting many concurrent queries in parallel.},
-booktitle = {Advances in Information Retrieval: 47th European Conference on Information Retrieval, ECIR 2025, Lucca, Italy, April 6-10, 2025, Proceedings, Part IV},
-pages = {21-30},
-numpages = {10},
-keywords = {Information Retrieval, ColBERT, Efficiency},
-location = {Lucca, Italy}
 }
 
 @ARTICLE{10595468,
