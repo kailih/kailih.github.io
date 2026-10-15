@@ -1,85 +1,119 @@
 require "active_support/all"
-require 'nokogiri'
-require 'open-uri'
+require "fileutils"
+require "json"
+require "nokogiri"
+require "open-uri"
+require "time"
 
 module Helpers
   extend ActiveSupport::NumberHelper
 end
 
 module Jekyll
-  class GoogleScholarCitationsTag < Liquid::Tag
-    Citations = { }
+  class GoogleScholarCitationsStore
+    CACHE_PATH = ".jekyll-cache/google-scholar-citations.json"
+    PUBLISHED_PATH = "assets/data/google-scholar-citations.json"
 
-    def initialize(tag_name, params, tokens)
-      super
-      splitted = params.split(" ").map(&:strip)
-      @scholar_id = splitted[0]
-      @article_id = splitted[1]
+    def self.for_site(site)
+      site.instance_variable_get(:@google_scholar_citations) ||
+        site.instance_variable_set(:@google_scholar_citations, new(site))
+    end
 
-      if @scholar_id.nil? || @scholar_id.empty?
-        puts "Invalid scholar_id provided"
+    def initialize(site)
+      @site = site
+      @records = {}
+      @attempted = {}
+      merge_records(site.data["google_scholar_citations"] || {})
+      path = File.join(site.source, CACHE_PATH)
+      merge_records(JSON.parse(File.read(path))) if File.file?(path)
+    rescue JSON::ParserError, SystemCallError => e
+      Jekyll.logger.warn "Google Scholar:", "Cannot read saved citations (#{e.message}); using verified seed data."
+    end
+
+    def lookup(scholar_id, article_id)
+      key = "#{scholar_id}:#{article_id}"
+      return @records[key] if @attempted[key]
+
+      @attempted[key] = true
+      url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=#{scholar_id}&citation_for_view=#{key}"
+      begin
+        sleep(rand(1.5..3.5))
+        doc = URI.open(url, "User-Agent" => "Ruby/#{RUBY_VERSION}", open_timeout: 10, read_timeout: 15) do |response|
+          Nokogiri::HTML(response)
+        end
+        # A missing count or a block page is unknown, never a verified zero.
+        raise "Scholar article title missing" if doc.at_css("#gsc_oci_title")&.text.to_s.strip.empty?
+
+        match = doc.css('meta[name="description"], meta[property="og:description"]').filter_map do |meta|
+          meta["content"].to_s.match(/Cited by (\d[\d,]*)\b/)
+        end.first
+        raise "Citation count missing from Scholar page" unless match
+
+        @records[key] = { "count" => match[1].delete(",").to_i, "fetched_at" => Time.now.utc.iso8601 }
+      rescue StandardError => e
+        fallback = @records[key] ? "keeping count from #{@records[key]['fetched_at']}" : "showing Scholar link only"
+        Jekyll.logger.warn "Google Scholar:", "#{key}: #{e.class} - #{e.message}; #{fallback}."
       end
+      @records[key]
+    end
 
-      if @article_id.nil? || @article_id.empty?
-        puts "Invalid article_id provided"
+    def write
+      # The published JSON travels with gh-pages; the workflow restores it next time.
+      json = JSON.pretty_generate(@records.sort.to_h) + "\n"
+      [File.join(@site.source, CACHE_PATH), File.join(@site.dest, PUBLISHED_PATH)].each do |path|
+        FileUtils.mkdir_p(File.dirname(path))
+        File.write(path, json)
       end
     end
 
+    private
+
+    def merge_records(records)
+      return unless records.is_a?(Hash)
+
+      records.each do |key, record|
+        next unless record.is_a?(Hash) && record["count"].is_a?(Integer) && record["count"] >= 0
+
+        begin
+          fetched_at = Time.iso8601(record.fetch("fetched_at"))
+        rescue ArgumentError, TypeError, KeyError
+          next
+        end
+        next if @records[key] && Time.iso8601(@records[key]["fetched_at"]) >= fetched_at
+
+        @records[key] = { "count" => record["count"], "fetched_at" => fetched_at.utc.iso8601 }
+      end
+    end
+  end
+
+  class GoogleScholarCitationsTag < Liquid::Tag
+    def initialize(tag_name, params, tokens)
+      super
+      @scholar_id, @article_id, @field = params.split
+    end
+
     def render(context)
-      article_id = context[@article_id.strip]
-      scholar_id = context[@scholar_id.strip]
-      article_url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=#{scholar_id}&citation_for_view=#{scholar_id}:#{article_id}"
+      scholar_id = context[@scholar_id]
+      article_id = context[@article_id]
+      return "" if scholar_id.to_s.empty? || article_id.to_s.empty?
 
-      begin
-          # If the citation count has already been fetched, return it
-          if GoogleScholarCitationsTag::Citations[article_id]
-            return GoogleScholarCitationsTag::Citations[article_id]
-          end
+      record = GoogleScholarCitationsStore.for_site(context.registers[:site]).lookup(scholar_id, article_id)
+      return "" unless record
 
-          # Sleep for a random amount of time to avoid being blocked
-          sleep(rand(1.5..3.5))
-
-          # Fetch the article page
-          doc = Nokogiri::HTML(URI.open(article_url, "User-Agent" => "Ruby/#{RUBY_VERSION}"))
-
-          # Attempt to extract the "Cited by n" string from the meta tags
-          citation_count = 0
-
-          # Look for meta tags with "name" attribute set to "description"
-          description_meta = doc.css('meta[name="description"]')
-          og_description_meta = doc.css('meta[property="og:description"]')
-
-          if !description_meta.empty?
-            cited_by_text = description_meta[0]['content']
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-
-            if matches
-              citation_count = matches[1].sub(",", "").to_i
-            end
-
-          elsif !og_description_meta.empty?
-            cited_by_text = og_description_meta[0]['content']
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-
-            if matches
-              citation_count = matches[1].sub(",", "").to_i
-            end
-          end
-
-        citation_count = Helpers.number_to_human(citation_count, :format => '%n%u', :precision => 2, :units => { :thousand => 'K', :million => 'M', :billion => 'B' })
-
-      rescue Exception => e
-        # Handle any errors that may occur during fetching
-        citation_count = "N/A"
-
-        # Print the error message including the exception class and message
-        puts "Error fetching citation count for #{article_id} in #{article_url}: #{e.class} - #{e.message}"
+      if @field == "details"
+        date = Time.iso8601(record["fetched_at"]).utc.strftime("%Y-%m-%d")
+        return "#{record['count']} Google Scholar citations; last retrieved #{date} (UTC)"
       end
 
-      GoogleScholarCitationsTag::Citations[article_id] = citation_count
-      return "#{citation_count}"
+      "#{record['count'] / 10 * 10}+"
     end
   end
 end
 
-Liquid::Template.register_tag('google_scholar_citations', Jekyll::GoogleScholarCitationsTag)
+Liquid::Template.register_tag("google_scholar_citations", Jekyll::GoogleScholarCitationsTag)
+Jekyll::Hooks.register :site, :after_reset do |site|
+  site.instance_variable_set(:@google_scholar_citations, nil)
+end
+Jekyll::Hooks.register :site, :post_write do |site|
+  site.instance_variable_get(:@google_scholar_citations)&.write
+end

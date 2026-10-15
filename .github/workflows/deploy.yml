@@ -9,6 +9,8 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_plugins/**"
+      - "_tests/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -38,6 +40,8 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_plugins/**"
+      - "_tests/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -81,6 +85,17 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Test Scholar citation fallback
+        run: bundle exec ruby _tests/google_scholar_citations_test.rb
+      - name: Restore last successful Scholar citations
+        run: |
+          mkdir -p .jekyll-cache
+          git fetch --depth=1 origin gh-pages
+          if git cat-file -e FETCH_HEAD:assets/data/google-scholar-citations.json 2>/dev/null; then
+            git show FETCH_HEAD:assets/data/google-scholar-citations.json > .jekyll-cache/google-scholar-citations.json
+          else
+            echo "::warning::No published Scholar snapshot available; using verified seed data."
+          fi
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:

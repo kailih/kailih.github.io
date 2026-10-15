@@ -13,8 +13,6 @@ nav_order: 3
 
 {% include bib_search.liquid %}
 
-<!-- <p>Total citations: <strong>{% google_scholar_total_citations site.data.socials.scholar_userid %}</strong> (via <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" target="_blank">Google Scholar</a>)</p> -->
-
 <div class="publications">
 
 {% bibliography %}
