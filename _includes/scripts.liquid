@@ -223,6 +223,15 @@
   {% endunless %}
 {% endif %}
 
+{% if jekyll.environment == 'production' and site.cloudflare_analytics and site.cloudflare_analytics != empty %}
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": {{ site.cloudflare_analytics | jsonify | escape }}}'
+  ></script>
+{% endif %}
+
 {% if site.enable_google_analytics %}
   <!-- Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
