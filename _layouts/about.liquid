@@ -18,8 +18,10 @@ layout: default
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.video %}
-          {% comment %} Living portrait: a muted looping video in the profile slot. Falls back to the poster image
-          (no autoplay, slow network, reduced-motion) and to a plain <img> where <video> is unsupported. {% endcomment %}
+          {% comment %}
+            Living portrait: a muted looping video in the profile slot. Falls back to the poster image
+            (no autoplay, slow network, reduced-motion) and to a plain <img> where <video> is unsupported.
+          {% endcomment %}
           {% assign profile_video_path = page.profile.video | prepend: '/assets/video/' %}
           {% assign profile_poster_path = page.profile.poster | prepend: '/assets/img/' %}
           <video
@@ -33,13 +35,20 @@ layout: default
             disablepictureinpicture
             aria-label="{{ page.profile.video_alt | default: 'profile video' }}"
           >
-            <img src="{{ profile_poster_path | relative_url }}" class="img-fluid z-depth-1 rounded" alt="{{ page.profile.video_alt | default: 'profile photo' }}">
+            <img
+              src="{{ profile_poster_path | relative_url }}"
+              class="img-fluid z-depth-1 rounded"
+              alt="{{ page.profile.video_alt | default: 'profile photo' }}"
+            >
           </video>
           <script>
             (function () {
               if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 var v = document.querySelector('.profile-video');
-                if (v) { v.removeAttribute('autoplay'); v.pause(); }
+                if (v) {
+                  v.removeAttribute('autoplay');
+                  v.pause();
+                }
               }
             })();
           </script>

@@ -9,8 +9,7 @@ importance: 2
 category: School
 ---
 
-
-----------
+---
 
 <!-- # Which Trick Works Best in GNN?— Analyzed on arXiv Citation Dataset
 
@@ -72,7 +71,6 @@ Aggregate Step, AGG is a function such as MEAN, MAX, SUM
 </div>
 <!-- ![](https://cdn-images-1.medium.com/max/1600/1*5RWFfORm1sh6KaBNq4zSSA.png) -->
 
-
 GAT, in addition, applies an extra self-attention mechanism to GNN. At the Aggregation step, the “message” of neighbor nodes are aggregated with respect to an “attention score”. For a central node _A_ and one of its neighbor node _B_, an attention score _α_ between _A_ and _B_ is computed and it determines the “weight” of neighbor node _B_’s “message” when central node _A_ is doing Aggregation.
 
 This attention score can be seen as a factor of importance. As supposed to the average aggregation where the weights are all _1/N_ (where _N_ denotes the number of neighbors node _A_ has), _α_ of _A_ and _B_ can be higher or lower than _1/N_, indicating a larger or smaller impact that the neighbor node _B_ has on the central node _A_.
@@ -100,8 +98,6 @@ i is the central node, j is i’s neighbor node. W is a parameter matrix. a is a
 Ni is the neighbor node set of node i [4]
 </div>
 <!-- ![](https://cdn-images-1.medium.com/max/1600/1*zn-PH1hH7SjC9mEaQY8OSA.png) -->
-
-
 
 By using a single-layer feedforward neural network as the mechanism _a_, and applying the LeakyReLU nonlinearity, we have the expression for _α_:
 
@@ -156,7 +152,6 @@ The base model pipeline we applied is shown below.
 <div class="caption">
 Aggregation step of node A with Two-Head Attention mechanism
 </div>
-
 
 Base GAT model pipeline
 
@@ -274,7 +269,7 @@ Please refer to the code snippet for implement details:
 
 C&S implement code snippet
 
-----------
+---
 
 Let’s take a break here and see how far we’ve got! Till now, our base model has added 4 tricks (add node2vec embeddings, modify GAT architecture, label usage, C&S). The current pipeline of our model is shown below. The orange box represents the modification of the GAT model, the yellow box represents adding node2vec embeddings, the green box represents label usage, and the blue box represents C&S.
 
@@ -282,13 +277,13 @@ Let’s take a break here and see how far we’ve got! Till now, our base model 
 
 Our model pipeline after adding _4_ tricks
 
-----------
+---
 
 #### Self-KD
 
 Knowledge Distillation (KD) is a model compression method in which a small model is trained to mimic a pre-trained, larger model (or ensemble of models). A common approach is to induce an extra loss with the predictions from a stronger model as labels. Self-KD is a trick that originated from the idea of KD. Sometimes, if we first train a model and then use it as the teacher model to train a second model in a KD fashion, the second model would perform better.
 
-----------
+---
 
 Below is an illustration of our complete model after adding all the tricks we mentioned above. And let’s get started on the experiments!
 
@@ -296,7 +291,7 @@ Below is an illustration of our complete model after adding all the tricks we me
 
 The complete model after adding all tricks mentioned above
 
-----------
+---
 
 ### Experiments
 
@@ -334,17 +329,17 @@ Experiment result of different model settings
 
 We can observe that:
 
--   Training with Node2Vec embeddings improves both validation accuracy and test accuracy by about 1 point. Though not shown in this chart, the training process also converged noticeably faster.
--   Adding residual connections and normalizing the attention matrix together brought tiny improvement. Since we only used 3 layers of GAT, residual connections may not be as useful as they are in deep models.
--   Label usage and C&S further boosted the performance by 0.3% and 0.5%, respectively. These two tricks both involve leveraging ground truth labels, and they may have similar effects on the learning process — using neighbors with ground truth to guide prediction.
--   At last, experiments show self-KD brought no performance gain. We must point out that, averaging the outcome of 5 runs is still not statistically stable enough to claim that self-KD is not helpful in our setting, but chances are high that they are not as significant as other tricks.
+- Training with Node2Vec embeddings improves both validation accuracy and test accuracy by about 1 point. Though not shown in this chart, the training process also converged noticeably faster.
+- Adding residual connections and normalizing the attention matrix together brought tiny improvement. Since we only used 3 layers of GAT, residual connections may not be as useful as they are in deep models.
+- Label usage and C&S further boosted the performance by 0.3% and 0.5%, respectively. These two tricks both involve leveraging ground truth labels, and they may have similar effects on the learning process — using neighbors with ground truth to guide prediction.
+- At last, experiments show self-KD brought no performance gain. We must point out that, averaging the outcome of 5 runs is still not statistically stable enough to claim that self-KD is not helpful in our setting, but chances are high that they are not as significant as other tricks.
 
 **The final result compared to leaderboard data:**
 
 Our results are lower than the numbers on the leaderboard (~0.5%), probably because of two reasons:
 
--   The author used one V100 GPU for training, which supports more parameters in the hidden layer of GAT (64 v.s. 256)
--   Randomness
+- The author used one V100 GPU for training, which supports more parameters in the hidden layer of GAT (64 v.s. 256)
+- Randomness
 
 ### Conclusion
 
@@ -363,4 +358,4 @@ Going from top to bottom of the ogbn-arxiv leaderboard we can observe an interes
 7.  Wang, Y., Jin, J., Zhang, W., Yu, Y., Zhang, Z., & Wipf, D. (2021). Bag of Tricks for Node Classification with Graph Neural Networks. _arXiv preprint arXiv:2103.13355_.
 8.  Kipf, T. N. & Welling, M. (2016). Semi-Supervised Classification with Graph Convolutional Networks. _5th International Conference on Learning Representations_.
 9.  Huang, Q., He, H., Singh, A., Lim, S. N., & Benson, A. R. (2020). Combining label propagation and simple models out-performs graph neural networks. _arXiv preprint arXiv:2010.13993_.
-10.  Chi, H., Wang, Y., Hao, Q., & Xia, H. (2021). Residual Network and Embedding Usage: New Tricks of Node Classification with Graph Convolutional Networks. _arXiv preprint arXiv:2105.08330_. -->
+10. Chi, H., Wang, Y., Hao, Q., & Xia, H. (2021). Residual Network and Embedding Usage: New Tricks of Node Classification with Graph Convolutional Networks. _arXiv preprint arXiv:2105.08330_. -->
