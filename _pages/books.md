@@ -3,6 +3,7 @@ layout: book-shelf
 title: # bookshelf # TODO When I want to display bookshelf, add a title and put things in _books/
 permalink: /books/
 nav: false
+published: false
 collection: books
 ---
 

@@ -39,4 +39,4 @@ This website content is my own work. The underlying theme (al-folio) is licensed
 
 ---
 
-*Last updated: July 2025*
+*Last updated: October 2026*
