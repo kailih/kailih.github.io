@@ -1417,3 +1417,25 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+// Living portrait in the profile slot
+.profile .profile-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.profile .profile-quote {
+  font-family: var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+.profile .profile-where {
+  font-family: var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+  opacity: 0.8;
+  margin-top: 0.15rem;
+}

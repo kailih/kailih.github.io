@@ -6,9 +6,14 @@ subtitle: "<strong>Senior MLE @ Apple | LLM Post-Training, RL & Alignment</stron
 
 profile:
   align: right
-  image: prof_pic_3.jpg
+  video: stanford_2026_portrait.mp4 # living portrait (muted loop); poster is shown when video can't play
+  poster: stanford_2026_portrait_poster.jpg
+  video_alt: Kaili at Stanford, October 2026
+  # image: prof_pic_3.jpg # static photo; used when `video` is removed
   image_circular: false # crops the image to make it circular
   more_info: >
+    <div class="profile-quote">forward pass, backward pass, repeat.</div>
+    <div class="profile-where">Stanford · Oct 2026</div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

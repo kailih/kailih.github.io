@@ -17,7 +17,33 @@ layout: default
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+        {% if page.profile.video %}
+          {% comment %} Living portrait: a muted looping video in the profile slot. Falls back to the poster image
+          (no autoplay, slow network, reduced-motion) and to a plain <img> where <video> is unsupported. {% endcomment %}
+          {% assign profile_video_path = page.profile.video | prepend: '/assets/video/' %}
+          {% assign profile_poster_path = page.profile.poster | prepend: '/assets/img/' %}
+          <video
+            class="profile-video img-fluid z-depth-1 {% if page.profile.image_circular %}rounded-circle{% else %}rounded{% endif %}"
+            src="{{ profile_video_path | relative_url }}"
+            poster="{{ profile_poster_path | relative_url }}"
+            autoplay
+            loop
+            muted
+            playsinline
+            disablepictureinpicture
+            aria-label="{{ page.profile.video_alt | default: 'profile video' }}"
+          >
+            <img src="{{ profile_poster_path | relative_url }}" class="img-fluid z-depth-1 rounded" alt="{{ page.profile.video_alt | default: 'profile photo' }}">
+          </video>
+          <script>
+            (function () {
+              if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var v = document.querySelector('.profile-video');
+                if (v) { v.removeAttribute('autoplay'); v.pause(); }
+              }
+            })();
+          </script>
+        {% elsif page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
