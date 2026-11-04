@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-cv",
-          title: "cv",
-          description: "Welcome to Kaili Huang&#39;s CV. Click the PDF icon to view or download the full resume.",
+  },{id: "nav-projects",
+          title: "projects",
+          description: "Research I have done, from RL post-training and evaluation to retrieval and open datasets, plus the open-source repositories behind it. Teaching and coursework from Stanford at the bottom.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/cv/";
+            window.location.href = "/projects/";
           },
         },{id: "nav-publications",
           title: "publications",
@@ -23,26 +23,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Selected repositories that Kaili has led the initiatives or greatly contributed to.",
+        },{id: "nav-cv",
+          title: "cv",
+          description: "Kaili Huang&#39;s CV.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Kaili&#39;s experience as a teaching assistant (TA).",
+        },{id: "nav-news",
+          title: "news",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A selection of interesting projects that Kaili worked on while studying at Stanford.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/news/";
           },
         },{id: "news-excited-to-share-that-our-paper-colbert-serve-efficient-multi-stage-memory-mapped-scoring-was-accepted-and-presented-at-the-47th-european-conference-on-information-retrieval-ecir-2025-the-work-introduces-a-memory-mapped-multi-stage-scoring-approach-that-makes-late-interaction-neural-retrieval-colbert-far-more-efficient-and-scalable-for-serving-llm-powered-retrieval-systems",
           title: 'Excited to share that our paper, ColBERT-serve: Efficient Multi-Stage Memory-Mapped Scoring, was accepted...',
@@ -50,13 +43,30 @@ ninja.data = [{
           section: "News",},{id: "news-i-m-happy-to-share-that-i-joined-apple-as-a-senior-machine-learning-engineer-this-january-working-on-llm-post-training-rl-policy-optimization-and-alignment-evaluation-for-large-scale-retrieval-i-look-forward-to-pushing-the-boundaries-of-reasoning-driven-retrieval-and-alignment-read-more-on-linkedin",
           title: 'I’m happy to share that I joined Apple as a Senior Machine Learning...',
           description: "",
-          section: "News",},{id: "news-i-will-be-attending-acl-2026-in-san-diego-excited-to-meet-with-friends-there",
-          title: 'I will be attending ACL 2026 in San Diego. Excited to meet with...',
-          description: "",
           section: "News",},{id: "news-excited-to-share-our-latest-work-it-takes-two-to-match-co-evolving-generative-retriever-with-reinforcement-learning-we-introduce-cogr-a-generative-retrieval-framework-in-which-llms-generate-matching-keywords-for-both-queries-and-items-and-the-two-sides-co-evolve-through-reinforcement-learning-check-out-my-posts-on-linkedin-and-x",
           title: 'Excited to share our latest work, It Takes Two to Match: Co-Evolving Generative...',
           description: "",
-          section: "News",},{id: "projects-engineering-effective-in-context-inputs-for-gpt-3-in-openqa",
+          section: "News",},{id: "projects-autoresearch-an-agent-that-runs-the-experiment-loop",
+          title: 'Autoresearch: an agent that runs the experiment loop',
+          description: "A generic workflow in which an LLM agent proposes, trains, evaluates, and accepts or rejects experiments on its own, inside rules a person sets. I built one instance of it for model compression; after manual validation of the first iterations, it ran a multi-day sequence of experiments without further input and delivered a materially smaller model within the performance tolerance.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/autoresearch/";
+            },},{id: "projects-structured-pruning-for-clip",
+          title: 'Structured Pruning for CLIP',
+          description: "Extended structured pruning to a multimodal dual-encoder for the first time, removing 40% of CLIP&#39;s parameters at a 1% accuracy cost. Built the sparse PyTorch training pipeline, decomposed Block Movement Pruning into modular steps, and added auxiliary losses to balance the two modalities.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/clip-pruning/";
+            },},{id: "projects-cogr-co-evolving-generative-retrieval",
+          title: 'CoGR: Co-Evolving Generative Retrieval',
+          description: "Two LLMs, one for queries and one for items, learn to write matching keyword representations. After SFT they are trained with alternating GRPO updates against a single shared retrieval objective, with a counterfactual marginal reward for item-level credit assignment. 10.9–36.1% relative F1 gains over the strongest baseline.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cogr/";
+            },},{id: "projects-colbert-serve",
+          title: 'ColBERT-Serve',
+          description: "A serving system that memory-maps the ColBERT index, uses a sparse first stage (SPLADEv2) to pick candidates, and re-ranks them with ColBERT under a hybrid score. Cuts RAM by 90% and lets late-interaction retrieval run on inexpensive servers under many concurrent queries. ECIR 2025, with Matei Zaharia (Databricks co-founder), Christopher Potts, et al.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/colbert-serve/";
+            },},{id: "projects-engineering-effective-in-context-inputs-for-gpt-3-in-openqa",
           title: 'Engineering Effective In-Context Inputs for GPT-3 in OpenQA',
           description: "Designed and evaluated novel in-context learning strategies to improve GPT-3’s performance on OpenQA without access to gold passages. Explored lexical, syntactic, and semantic similarity-based example selection methods, and introduced reverse ordering to enhance contextual relevance. The semantic similarity + reverse order strategy achieved the best performance (F1=0.57), yielding a 5% improvement over the random baseline. Findings highlight the impact of example amount, quality, similarity, and ordering on large language model effectiveness.",
           section: "Projects",handler: () => {
@@ -71,6 +81,26 @@ ninja.data = [{
           description: "In this blog, we reproduced the work of &quot;Residual Network and Embedding Usage - New Tricks of Node Classification with Graph Convolutional Networks.&quot; and deliver a thorough introduction and analysis. In detail, we implemented the Graph Attention Network and several commonly used tricks to challenge the node classification task on the ogbn-arxiv dataset. Our experiments show satisfactory results on this dataset. At the same time, we explored the effectiveness of different tricks proposed or introduced in the paper. From our experiments, we found that Node2Vec embeddings, label usage, and C&amp;S achieved noticeable improvements on the task while changing the network structure of GAT and leveraging self-KD barely increases the accuracy.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cs224w_21fall/";
+            },},{id: "projects-chinese-dialogue-corpora-dstc9",
+          title: 'Chinese Dialogue Corpora + DSTC9',
+          description: "Three widely used open datasets for Chinese dialogue (CrossWOZ, KdConv, LCCC), each shipped with benchmark models and, for CrossWOZ, a user simulator. Together they have 3,000+ GitHub stars. I also co-organized the DSTC9 multi-domain task-completion track built on them.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/dialogue-datasets/";
+            },},{id: "projects-llm-evaluation-amp-alignment",
+          title: 'LLM Evaluation &amp;amp; Alignment',
+          description: "Three threads from Microsoft AI. Rubric-based LLM-judge evaluation with human-in-the-loop metrics for Copilot&#39;s retrieval-augmented generation; post-training for multimodal retrieval models (Qwen-VL, CLIP-style); and an LLM teacher distilled into a lightweight E5 retriever that shipped after A/B testing.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm-evaluation/";
+            },},{id: "projects-model-based-rl-for-dialogue-policy",
+          title: 'Model-Based RL for Dialogue Policy',
+          description: "Built SLBO and vanilla policy-gradient agents for a movie-ticket booking task, a chatbot environment and user-simulator sampling pipeline to train them, and a harness for comparing model-based deep RL algorithms on dialogue policy. Stanford UGVR with Tengyu Ma.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rl-dialogue/";
+            },},{id: "projects-transformer-notes",
+          title: 'Transformer Notes',
+          description: "A nine-page, step-by-step derivation of the Transformer that I wrote as a CS224N teaching assistant (Stanford, Winter 2022, with Christopher Manning). Queries, keys and values; scaled dot-product and multi-head attention; the encoder and decoder layers; positional encoding; masking; residual connections and layer norm; then the whole picture. Also mentored 10+ final-project teams and held weekly office hours.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/transformer-notes/";
             },},{
         id: 'social-email',
         title: 'email',
