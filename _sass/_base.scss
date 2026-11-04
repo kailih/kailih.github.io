@@ -1476,9 +1476,9 @@ figure.cover {
 
 .now-box {
   border-left: 3px solid var(--global-theme-color);
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   margin: 0 0 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   background: var(--global-code-bg-color);
   border-radius: 0 6px 6px 0;
 }
@@ -1699,19 +1699,19 @@ figure.cover {
   .idea-card {
     border: 1px solid var(--global-divider-color);
     border-radius: 6px;
-    padding: 0.8rem 0.95rem;
+    padding: 0.9rem 1.05rem;
     background: var(--global-card-bg-color);
-    font-size: 0.88rem;
-    line-height: 1.45;
+    font-size: 0.96rem;
+    line-height: 1.5;
   }
   .idea-title {
     font-weight: 600;
     margin-bottom: 0.3rem;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
   .idea-more {
     margin-top: 0.5rem;
-    font-size: 0.84rem;
+    font-size: 0.92rem;
 
     summary {
       cursor: pointer;
@@ -1855,9 +1855,9 @@ html {
   background: var(--global-theme-color);
   opacity: 0.55;
   pointer-events: none;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'><path d='M3 9 C 30 4, 60 13, 95 8 S 150 12, 197 6' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/></svg>")
+  mask: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2016'%20preserveAspectRatio='none'%3E%3Cpath%20d='M3%209%20C%2030%204,%2060%2013,%2095%208%20S%20150%2012,%20197%206'%20fill='none'%20stroke='black'%20stroke-width='6'%20stroke-linecap='round'/%3E%3C/svg%3E")
     no-repeat center / 100% 100%;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'><path d='M3 9 C 30 4, 60 13, 95 8 S 150 12, 197 6' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/></svg>")
+  -webkit-mask: url("data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2016'%20preserveAspectRatio='none'%3E%3Cpath%20d='M3%209%20C%2030%204,%2060%2013,%2095%208%20S%20150%2012,%20197%206'%20fill='none'%20stroke='black'%20stroke-width='6'%20stroke-linecap='round'/%3E%3C/svg%3E")
     no-repeat center / 100% 100%;
 }
 
@@ -1904,5 +1904,32 @@ html {
   .repo-badges .inline-badge {
     height: 1.4em;
     vertical-align: middle;
+  }
+}
+
+// Theme toggle outside the navbar collapse: right of the links on desktop, next to the hamburger on phones
+.theme-toggle-outer {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  order: 3;
+  margin-left: 0.9rem;
+}
+#navbar .navbar-collapse {
+  order: 2;
+}
+@media (max-width: 575.98px) {
+  .theme-toggle-outer {
+    order: 1;
+    margin-left: auto;
+    margin-right: 0.9rem;
+  }
+  #navbar .navbar-toggler.ml-auto {
+    margin-left: 0 !important;
+    order: 2;
+  }
+  #navbar .navbar-collapse {
+    order: 3;
+    flex-basis: 100%;
   }
 }
