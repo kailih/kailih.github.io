@@ -14,7 +14,10 @@
         {% else %}
           {% assign news_limit = news_size %}
         {% endif %}
+        {% assign cutoff = 'now' | date: '%s' | minus: 31536000 %}
         {% for item in news limit: news_limit %}
+          {% assign item_ts = item.date | date: '%s' | plus: 0 %}
+          {% if include.limit and item_ts < cutoff %}{% continue %}{% endif %}
           <tr>
             <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
             <td>

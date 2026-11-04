@@ -6,7 +6,7 @@ description: In this blog, we reproduced the work of "Residual Network and Embed
 img: assets/img/cs224w-2.jpg
 redirect: https://medium.com/@kailihuang/which-trick-works-best-in-gnn-analyzed-on-arxiv-citation-dataset-e9f29ce07e04
 importance: 2
-category: School
+category: Coursework
 ---
 
 ---

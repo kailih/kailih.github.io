@@ -3,7 +3,7 @@ layout: page
 permalink: /teaching/
 title: teaching
 description: Kaili's experience as a teaching assistant (TA).
-nav: true
+nav: false
 nav_order: 5
 ---
 

@@ -15,6 +15,15 @@ layout: default
   </header>
 
   <article>
+    {% assign content_parts = content | split: '<!-- intro -->' %}
+    {% if page.intro and content_parts.size > 1 %}
+      <div class="clearfix">{{ content_parts[0] }}</div>
+    {% endif %}
+    {% if page.intro %}
+      {% comment %} Intro paragraph beside the profile media, vertically centered; everything else flows below at full width. {% endcomment %}
+      <div class="intro-row" id="intro">
+        <div class="intro-text">{{ page.intro | markdownify }}</div>
+    {% endif %}
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.video %}
@@ -72,12 +81,19 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
+    {% if page.intro %}
+      </div>
+    {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    {% if page.intro and content_parts.size > 1 %}
+      <div class="clearfix">{{ content_parts[1] }}</div>
+    {% else %}
+      <div class="clearfix">{{ content }}</div>
+    {% endif %}
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
+      <h2 id="news">
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
@@ -93,7 +109,7 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
+      <h2 id="publications">
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
       </h2>
       {% include selected_papers.liquid %}
