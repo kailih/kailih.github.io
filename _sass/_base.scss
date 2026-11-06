@@ -1933,3 +1933,129 @@ html {
     flex-basis: 100%;
   }
 }
+
+// Phones only (desktop layout is untouched): portrait, name and intro first, then the timeline,
+// each section in its own card; the footer sits at the end instead of covering content.
+@media (max-width: 575.98px) {
+  // Flatten article + intro-row so the portrait, name, intro and timeline can be reordered:
+  // portrait → name → intro → timeline → everything else (source order).
+  .about-post {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-article,
+  .about-article > .intro-row {
+    display: contents;
+  }
+  .about-article > * {
+    order: 4;
+  }
+  .intro-row .intro-text {
+    order: 3;
+  }
+  // Portrait + name + tagline read as one card: the profile box is its top half,
+  // the post header its bottom half.
+  .intro-row .profile {
+    order: 1;
+    width: auto;
+    height: auto;
+    margin: 0 !important;
+    padding: 1.25rem 1.25rem 0;
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-bottom: 0;
+    border-radius: 18px 18px 0 0;
+  }
+  .intro-row .profile .profile-video,
+  .intro-row .profile img {
+    width: 170px;
+    height: 170px; // square
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+  }
+  .about-post > .post-header {
+    order: 2;
+    margin: 0 0 1rem;
+    padding: 0.9rem 1.25rem 1.25rem;
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-top: 0;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 6px 16px -10px rgba(0, 0, 0, 0.12);
+
+    .post-title {
+      font-size: 2.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .desc {
+      margin-bottom: 0;
+    }
+  }
+  // Intro, timeline and each lower section are their own cards
+  .intro-row .intro-text,
+  .about-article .journey,
+  .about-article .home-section {
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 18px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    padding: 1.1rem 1.25rem;
+    margin: 0 0 1rem;
+  }
+  .about-article .journey {
+    padding-left: 2.45rem; // room for the vertical line + dots
+  }
+  .about-article .home-section {
+    > h2,
+    > .section-title {
+      margin-top: 0;
+      font-size: 1.4rem; // same size for every section heading
+    }
+    // project cards inside the section card: lighter, matching corners
+    .projects .card {
+      border: 1px solid var(--global-divider-color);
+      border-radius: 12px;
+      box-shadow: none;
+      overflow: hidden;
+    }
+    .idea-cards {
+      margin-bottom: 0;
+    }
+    // inner idea cards become flat rows inside the section card
+    .idea-card {
+      border: 0;
+      border-top: 1px solid var(--global-divider-color);
+      border-radius: 0;
+      background: transparent;
+      padding: 0.9rem 0 0;
+    }
+  }
+  .intro-row .profile .more-info {
+    display: none;
+  }
+  footer.fixed-bottom {
+    position: static;
+  }
+}
+
+// Theme toggle: the al-folio icon padding (meant for the old in-menu placement) pushed the glyph
+// ~6px below the nav links / hamburger now that the toggle sits on its own. Center it instead.
+.theme-toggle-outer #light-toggle {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.theme-toggle-outer #light-toggle > i {
+  padding: 0 !important;
+}
+
+// Email line under the name on the home page
+.post-header .header-email {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1rem;
+  color: var(--global-text-color); // dark gray: body text color, softened
+  opacity: 0.72;
+  letter-spacing: 0.01em;
+}

@@ -3,6 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: "<strong>LLM post-training &amp; reinforcement learning</strong>"
+header_email: kaili@cs.stanford.edu # shown under the name as "kaili [at] cs.stanford.edu"
 
 profile:
   align: right
@@ -82,6 +83,7 @@ latest_posts:
 
 <!-- intro -->
 
+<div class="home-section">
 <h2 class="section-title" id="ideas">ideas I keep returning to</h2>
 
 <div class="idea-cards">
@@ -102,7 +104,9 @@ latest_posts:
     </details>
   </div>
 </div>
+</div>
 
+<div class="home-section">
 <h2 id="projects"><a href="/projects/" style="color: inherit">selected projects</a></h2>
 {% assign featured = site.projects | where: "featured", true | sort: "importance" %}
 <div class="projects">
@@ -111,4 +115,5 @@ latest_posts:
       {% include projects.liquid %}
     {% endfor %}
   </div>
+</div>
 </div>

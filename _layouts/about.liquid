@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post about-post">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -11,10 +11,15 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
+    {% if page.header_email %}
+      {% comment %} Shown as "name [at] domain" (like an academic homepage) to keep scrapers off it. {% endcomment %}
+      {% assign email_parts = page.header_email | split: '@' %}
+      <p class="header-email">{{ email_parts[0] }} [at] {{ email_parts[1] }}</p>
+    {% endif %}
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
-  <article>
+  <article class="about-article">
     {% assign content_parts = content | split: '<!-- intro -->' %}
     {% if page.intro and content_parts.size > 1 %}
       <div class="clearfix">{{ content_parts[0] }}</div>
