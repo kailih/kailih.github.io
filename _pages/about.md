@@ -3,6 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: "<strong>LLM post-training &amp; reinforcement learning</strong>"
+header_affiliation: Alum of Stanford Computer Science and Tsinghua Engineering
 header_email: kaili@cs.stanford.edu # shown under the name as "kaili [at] cs.stanford.edu"
 
 profile:
@@ -17,9 +18,9 @@ profile:
     <div class="profile-where">Stanford · Oct 2026</div>
 
 intro: |
-  I work on post-training and reinforcement learning for large language models. The parts I care about most are the ones that decide whether a model actually got better or only looks like it did: the <span class="kw">reward</span> that says what good means, the <span class="kw">data</span> the policy learns from, the <span class="kw">evaluation</span> that would catch it lying, and the <span class="kw">training loop</span> that holds the three together. At Apple I do this for LLM retrieval agents, from SFT through GRPO; I recently co-developed <a href="/projects/cogr/">CoGR</a>, which trains two LLMs to co-evolve against a single shared retrieval reward.
+  I work on post-training and reinforcement learning for large language models. The parts I care about most are the ones that decide whether a model actually got better or only looks like it did: the <span class="kw">reward</span> that says what good means, the <span class="kw">data</span> the policy learns from, the <span class="kw">evaluation</span> that would catch it lying, and the <span class="kw">training loop</span> that holds the three together. At Apple I do this for LLM retrieval agents, from SFT through GRPO; I recently co-developed <a href="/projects/cogr/">CoGR</a>, which trains two LLMs to co-evolve against a single shared retrieval reward (10.9–36.1% relative F1 over the strongest baseline). I also build <a href="/projects/autoresearch/">agents that run the experiment loop</a> themselves, inside rules a person sets.
 
-  I got here by way of dialogue. At Tsinghua I co-created the Chinese dialogue datasets people still train on: <a href="https://github.com/thu-coai/CrossWOZ">CrossWOZ</a> <a href="https://github.com/thu-coai/CrossWOZ"><img class="inline-badge" src="https://img.shields.io/github/stars/thu-coai/CrossWOZ?style=social" alt="GitHub stars for CrossWOZ" loading="lazy"></a>, <a href="https://github.com/thu-coai/KdConv">KdConv</a> <a href="https://github.com/thu-coai/KdConv"><img class="inline-badge" src="https://img.shields.io/github/stars/thu-coai/KdConv?style=social" alt="GitHub stars for KdConv" loading="lazy"></a>, and <a href="https://github.com/thu-coai/CDial-GPT">LCCC</a> <a href="https://github.com/thu-coai/CDial-GPT"><img class="inline-badge" src="https://img.shields.io/github/stars/thu-coai/CDial-GPT?style=social" alt="GitHub stars for LCCC" loading="lazy"></a>, which six years on still sees <a href="https://huggingface.co/datasets/thu-coai/lccc"><img class="inline-badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2Fthu-coai%2Flccc&query=%24.downloads&label=downloads%2Fmonth&logo=huggingface&logoColor=FFD21E&style=social" alt="Hugging Face monthly downloads for LCCC" loading="lazy"></a> on Hugging Face; at Stanford I built retrieval systems and tried model-based RL on dialogue policy for the first time; at ByteDance AI Lab I built and deployed fake-news and harmful-content detectors, from the annotation guidelines behind 2M+ human labels to automated retraining; at Microsoft AI I built the evaluation and alignment loop behind a retrieval-augmented Copilot. Each stop was a different piece of the same loop: the data a model learns from, the reward and training that make it better, and the check that it actually did.
+  I got here by way of dialogue. As an undergrad at Tsinghua I helped build Chinese dialogue datasets that are still in use (<a href="/projects/dialogue-datasets/">CrossWOZ, KdConv, LCCC</a>); at Stanford I built retrieval systems and tried model-based RL on dialogue policy for the first time; at ByteDance AI Lab I built and deployed fake-news and harmful-content detectors, from the annotation guidelines behind 2M+ human labels to automated retraining; at Microsoft AI I built the evaluation and alignment loop behind a retrieval-augmented Copilot. Each stop was a different piece of the same loop: the data a model learns from, the reward and training that make it better, and the check that it actually did.
 
   <div class="now-box" id="now">
     <strong>Thinking about:</strong> rewards that come from the real task rather than a proxy of it, how far an experiment loop can be handed to an agent before you stop trusting the result, and what an assistant has to understand about a person before it can take real weight off their mind, not just off their calendar. Chasing the same questions? <a href="mailto:kaili@cs.stanford.edu">Say hi</a>.
@@ -38,13 +39,15 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+<!-- intro -->
+
 <ol class="journey" id="journey">
   <li>
     <div class="journey-where"><img class="journey-logo" src="/assets/img/logos/tsinghua.png" alt="" loading="lazy">Tsinghua</div>
     <div class="journey-when">2016 – 2020</div>
     <ul class="journey-list">
-      <li><a href="/projects/dialogue-datasets/">CrossWOZ, KdConv, LCCC, CDial-GPT</a>: dialogue datasets and models people still use, with <a href="https://coai.cs.tsinghua.edu.cn/hml/">Minlie Huang</a></li>
-      <li>3,000+ GitHub stars; NLPCC 2020 Best Student Paper</li>
+      <li>Undergrad research with <a href="https://coai.cs.tsinghua.edu.cn/hml/">Minlie Huang</a>: co-built <a href="/projects/dialogue-datasets/">CrossWOZ, KdConv, LCCC, CDial-GPT</a>, dialogue datasets and models still in use</li>
+      <li>3,200+ GitHub stars across the three repos; NLPCC 2020 Best Student Paper</li>
     </ul>
   </li>
   <li>
@@ -81,7 +84,6 @@ latest_posts:
   </li>
 </ol>
 
-<!-- intro -->
 
 <div class="home-section">
 <h2 class="section-title" id="ideas">ideas I keep returning to</h2>

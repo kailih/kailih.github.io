@@ -11,6 +11,9 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
+    {% if page.header_affiliation %}
+      <p class="header-affiliation">{{ page.header_affiliation }}</p>
+    {% endif %}
     {% if page.header_email %}
       {% comment %} Shown as "name [at] domain" (like an academic homepage) to keep scrapers off it. {% endcomment %}
       {% assign email_parts = page.header_email | split: '@' %}
