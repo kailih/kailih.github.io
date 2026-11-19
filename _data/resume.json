@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Kaili Huang",
-    "label": "Senior ML Engineer | LLM Post-Training, RL & Alignment",
+    "label": "Senior ML Engineer | LLM Post-Training & RL",
     "image": "",
     "email": "kaili@cs.stanford.edu",
     "url": "https://kailihuang.com",
-    "summary": "Senior ML engineer focused on LLM post-training, RL alignment, and large-scale retrieval. Currently at Apple; previously at Microsoft AI and ByteDance AI Lab. MSCS @ Stanford.",
+    "summary": "Senior ML engineer focused on LLM post-training, RL, and large-scale retrieval. Currently at Apple; previously at Microsoft AI and ByteDance AI Lab. MSCS @ Stanford.",
     "profiles": [
       {
         "network": "LinkedIn",
@@ -43,8 +43,8 @@
       "url": "https://www.apple.com",
       "startDate": "2026-01-01",
       "endDate": "",
-      "summary": "Working on LLM post-training and RL alignment for large-scale retrieval. Focused on reward design, policy optimization, and preference-data workflows that move beyond traditional ranking toward reasoning-driven candidate generation.",
-      "highlights": ["LLM post-training (SFT/RL)", "Reward design & RL policy optimization", "Generative retrieval", "Alignment evaluation"]
+      "summary": "Working on LLM post-training and RL for large-scale retrieval. Focused on reward design, policy optimization, and preference-data workflows that move beyond traditional ranking toward reasoning-driven candidate generation.",
+      "highlights": ["LLM post-training (SFT/RL)", "Reward design & RL policy optimization", "Generative retrieval"]
     },
     {
       "name": "Microsoft AI",
@@ -258,7 +258,7 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "LLM Post-Training (SFT/RL)",
-        "RL Alignment & Reward Design",
+        "RL Training & Reward Design",
         "Large Language Models",
         "RAG & LLM Evaluation",
         "Multi-modal Learning (CLIP/SigLIP)",
