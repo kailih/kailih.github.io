@@ -76,6 +76,9 @@ latest_posts:
 </div>
 </div>
 
+<div class="home-section">
+<h2 id="experience"><a href="/cv/" style="color: inherit">experience</a></h2>
+
 <ol class="journey" id="journey">
   <li>
     <div class="journey-where"><img class="journey-logo" src="/assets/img/logos/tsinghua.png" alt="" loading="lazy">Tsinghua</div>
@@ -118,3 +121,5 @@ latest_posts:
     </ul>
   </li>
 </ol>
+
+</div>

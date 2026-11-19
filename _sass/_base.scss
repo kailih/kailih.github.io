@@ -1565,8 +1565,7 @@ figure.cover {
 
 // Home page: journey timeline + idea cards
 .section-title {
-  clear: both;
-  font-size: 1.4rem;
+  clear: both; // same size as the other section headings (default h2)
   margin-top: 1.6rem;
 }
 .section-lead {
@@ -1785,6 +1784,21 @@ figure.cover {
     > li:last-child::before {
       display: block; // newest stop is now at the top: connect it downward
     }
+  }
+}
+
+// Timeline inside its own home section: the section supplies the card on phones
+.about-article .home-section .journey {
+  margin-bottom: 0;
+}
+@media (max-width: 575.98px) {
+  .about-article .home-section .journey {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 0 1.2rem;
+    margin: 0;
   }
 }
 
