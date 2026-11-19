@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: "<strong>LLM post-training &amp; reinforcement learning</strong>"
-header_affiliation: Alum of Stanford Computer Science and Tsinghua Engineering
+header_affiliation: Alum of Stanford Computer Science and Tsinghua Industrial Engineering
 header_email: kaili@cs.stanford.edu # shown under the name as "kaili [at] cs.stanford.edu"
 
 profile:
