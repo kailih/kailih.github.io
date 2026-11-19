@@ -1774,6 +1774,20 @@ figure.cover {
   }
 }
 
+// Phones: newest stop first, like a resume
+@media (max-width: 767px) {
+  .journey {
+    display: flex;
+    flex-direction: column-reverse;
+    > li:first-child::before {
+      display: none; // oldest stop is now at the bottom: no line below it
+    }
+    > li:last-child::before {
+      display: block; // newest stop is now at the top: connect it downward
+    }
+  }
+}
+
 // About page: intro paragraph beside the profile media, vertically centered
 .intro-row {
   display: flex;

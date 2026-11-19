@@ -41,6 +41,41 @@ latest_posts:
 
 <!-- intro -->
 
+<div class="home-section">
+<h2 class="section-title" id="ideas">ideas I keep returning to</h2>
+
+<div class="idea-cards">
+  <div class="idea-card">
+    <div class="idea-title"><a href="/projects/autoresearch/">Agents that run their own experiments</a></div>
+    <div class="idea-body">An agent proposes, trains, evaluates, and decides what to try next, inside rules a person sets.</div>
+    <details class="idea-more">
+      <summary>what it taught me about agency</summary>
+      <p>Today's agents are good at pushing forward. What I want from the next generation is the judgment to stop: to step back and ask whether the whole approach is right, to change the architecture rather than the next line, and to reason from first principles: the goal is not to solve every problem it is handed, nor to grind on a particular one, but to keep the capacity to ask which problem is the right one. Most of my rule-setting in the experiment loop is an attempt to supply that judgment from the outside.</p>
+    </details>
+  </div>
+  <div class="idea-card">
+    <div class="idea-title">A second brain for everyone</div>
+    <div class="idea-body">AI moves from a chatbot you visit to something you carry. It takes the tedious work off your mind, so you have the headspace to think and decide better.</div>
+    <details class="idea-more">
+      <summary>the longer bet</summary>
+      <p>This is a long bet, measured in decades rather than product cycles. The hard parts are three: model capability, latency low enough that the system feels like part of you rather than a tool you wait on, and the interaction itself, how such a thing is built and wired into a life. It does the arithmetic, looks things up seamlessly as the conversation happens, remembers what you would otherwise have to memorize, helps you plan your life without the overhead, and clears away the tedious work that fills a day. You still do the thinking and make the decisions. It just makes sure nothing trivial is in the way. The measure of such a system is not how smart it sounds but how much clearer the person thinks, and how much better they decide, with it than without it. Underneath all of it is a simple belief: AI should serve people. Being free to do what you love and create what you want to create is one of the most valuable things a person could have. A system like this is worth building if it gives more people more of that freedom.</p>
+    </details>
+  </div>
+</div>
+</div>
+
+<div class="home-section">
+<h2 id="projects"><a href="/projects/" style="color: inherit">selected projects</a></h2>
+{% assign featured = site.projects | where: "featured", true | sort: "importance" %}
+<div class="projects">
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for project in featured %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+
 <ol class="journey" id="journey">
   <li>
     <div class="journey-where"><img class="journey-logo" src="/assets/img/logos/tsinghua.png" alt="" loading="lazy">Tsinghua</div>
@@ -83,39 +118,3 @@ latest_posts:
     </ul>
   </li>
 </ol>
-
-
-<div class="home-section">
-<h2 class="section-title" id="ideas">ideas I keep returning to</h2>
-
-<div class="idea-cards">
-  <div class="idea-card">
-    <div class="idea-title"><a href="/projects/autoresearch/">Agents that run their own experiments</a></div>
-    <div class="idea-body">An agent proposes, trains, evaluates, and decides what to try next, inside rules a person sets.</div>
-    <details class="idea-more">
-      <summary>what it taught me about agency</summary>
-      <p>Today's agents are good at pushing forward. What I want from the next generation is the judgment to stop: to step back and ask whether the whole approach is right, to change the architecture rather than the next line, and to reason from first principles: the goal is not to solve every problem it is handed, nor to grind on a particular one, but to keep the capacity to ask which problem is the right one. Most of my rule-setting in the experiment loop is an attempt to supply that judgment from the outside.</p>
-    </details>
-  </div>
-  <div class="idea-card">
-    <div class="idea-title">A second brain for everyone</div>
-    <div class="idea-body">AI moves from a chatbot you visit to something you carry. It takes the tedious work off your mind, so you have the headspace to think and decide better.</div>
-    <details class="idea-more">
-      <summary>the longer bet</summary>
-      <p>This is a long bet, measured in decades rather than product cycles. The hard parts are three: model capability, latency low enough that the system feels like part of you rather than a tool you wait on, and the interaction itself, how such a thing is built and wired into a life. It does the arithmetic, looks things up seamlessly as the conversation happens, remembers what you would otherwise have to memorize, helps you plan your life without the overhead, and clears away the tedious work that fills a day. You still do the thinking and make the decisions. It just makes sure nothing trivial is in the way. The measure of such a system is not how smart it sounds but how much clearer the person thinks, and how much better they decide, with it than without it. Underneath all of it is a simple belief: AI should serve people. Being free to do what you love and create what you want to create is one of the most valuable things a person could have. A system like this is worth building if it gives more people more of that freedom.</p>
-    </details>
-  </div>
-</div>
-</div>
-
-<div class="home-section">
-<h2 id="projects"><a href="/projects/" style="color: inherit">selected projects</a></h2>
-{% assign featured = site.projects | where: "featured", true | sort: "importance" %}
-<div class="projects">
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in featured %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-</div>
-</div>
