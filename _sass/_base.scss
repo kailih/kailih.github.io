@@ -1139,6 +1139,11 @@ nav[data-toggle="toc"] {
 
 #toc-sidebar {
   z-index: 1;
+
+  // Phones: the sidebar would stack on top of the page and overlap the text (e.g. the CV), so hide it
+  @media (max-width: 575.98px) {
+    display: none;
+  }
 }
 
 .echarts {
