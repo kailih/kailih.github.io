@@ -60,12 +60,28 @@ layout: default
           </video>
           <script>
             (function () {
+              var v = document.querySelector('.profile-video');
+              if (!v) return;
               if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                var v = document.querySelector('.profile-video');
-                if (v) {
-                  v.removeAttribute('autoplay');
-                  v.pause();
-                }
+                v.removeAttribute('autoplay');
+                v.pause();
+                return;
+              }
+              // iOS Low Power Mode (and some data-saver modes) block autoplay even for muted videos.
+              // Only then, swap in the animated WebP (images aren't blocked); everyone else keeps the video.
+              v.muted = true;
+              var p = v.play();
+              if (p && p.catch) {
+                p.catch(function (err) {
+                  if (!err || err.name !== 'NotAllowedError') return;
+                  var img = new Image();
+                  img.className = v.className;
+                  img.alt = v.getAttribute('aria-label') || '';
+                  img.onload = function () {
+                    if (v.paused && v.parentNode) v.parentNode.replaceChild(img, v);
+                  };
+                  img.src = '{{ profile_video_path | replace: ".mp4", ".webp" | relative_url }}';
+                });
               }
             })();
           </script>
