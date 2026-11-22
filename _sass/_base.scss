@@ -1429,13 +1429,18 @@ figure.cover {
   width: 100%;
   height: auto;
 }
-// When iOS blocks autoplay (Low Power Mode) or Reduce Motion pauses it, show the poster
-// as a still photo instead of Safari's big play-button overlay.
-.profile .profile-video::-webkit-media-controls-start-playback-button,
-.profile .profile-video::-webkit-media-controls-overlay-play-button,
-.profile .profile-video::-webkit-media-controls {
-  display: none !important;
-  -webkit-appearance: none;
+// Poster laid over the video until it plays (see about.liquid)
+.profile .profile-video-wrap {
+  position: relative;
+}
+.profile .profile-video-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: none;
 }
 .profile .profile-quote {
   font-family: var(--bs-body-font-family, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
