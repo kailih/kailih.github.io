@@ -4,6 +4,19 @@
             (function () {
               var v = document.querySelector('.profile-video');
               if (!v) return;
+              // Cover the video with its poster until it actually plays, so Safari never shows its play button.
+              var wrap = document.createElement('div');
+              wrap.className = 'profile-video-wrap';
+              v.parentNode.insertBefore(wrap, v);
+              wrap.appendChild(v);
+              var cover = new Image();
+              cover.className = v.className + ' profile-video-cover';
+              cover.alt = '';
+              cover.src = v.getAttribute('poster');
+              wrap.appendChild(cover);
+              v.addEventListener('playing', function () {
+                if (cover.parentNode) cover.parentNode.removeChild(cover);
+              });
               if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 v.removeAttribute('autoplay');
                 v.pause();
@@ -17,10 +30,8 @@
                 p.catch(function (err) {
                   if (!err || err.name !== 'NotAllowedError') return;
                   var img = new Image();
-                  img.className = v.className;
-                  img.alt = v.getAttribute('aria-label') || '';
                   img.onload = function () {
-                    if (v.paused && v.parentNode) v.parentNode.replaceChild(img, v);
+                    if (v.paused && cover.parentNode) cover.src = img.src;
                   };
                   img.src = '/assets/video/stanford_2026_portrait.webp';
                 });
